@@ -1,0 +1,35 @@
+<mxfile host="65bd71144e">
+    <diagram id="IL_KzvTNRKDmiEcQV_E0" name="Page-1">
+        <mxGraphModel dx="1177" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="19" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;&lt;b&gt;Customer&lt;br&gt;&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;- id: string&lt;br&gt;- name: string&lt;br&gt;- surname: string&lt;br&gt;- cardType: string&lt;br&gt;- regisDate: localdate&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;+ Customer(name: String,&lt;br&gt;surname: String)&lt;br&gt;+Customer(id: String, name String, surname String, cardType String,&lt;br&gt;regisDate Localdate)&lt;br&gt;+getCustomerId(name:String,&lt;br&gt;surname: String): String&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;fontSize=12;fillColor=default;strokeColor=#F0F0F0;perimeterSpacing=0;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="40" width="250" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;&lt;b&gt;Product&lt;br&gt;&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;- productName: string&lt;br&gt;- price: double&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;+ Product(string,double)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;fontSize=12;fillColor=default;strokeColor=#F0F0F0;perimeterSpacing=0;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="400" width="250" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;&lt;b&gt;ProductController&lt;br&gt;&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;- products: List&amp;lt;Product&amp;gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align: center;&quot;&gt;+ getAll(): List&amp;lt;Product&amp;gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;fontSize=12;fillColor=default;strokeColor=#F0F0F0;perimeterSpacing=0;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="400" width="250" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;&lt;b&gt;CustomerController&lt;br&gt;&lt;/b&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;- Customers List&amp;lt;Customer&amp;gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;+ CustomerController()&lt;br&gt;+ getAll: List&amp;lt;Customer&amp;gt;&lt;br&gt;+getID(name: String, surname: String): String&lt;br&gt;+ getCardType(id: String): String&lt;br&gt;+ getPercentageDiscount(name: String,surname: String, amount: int, isPhone: boolean): int&lt;br&gt;+ getAmountDiscount(amount: int): int&lt;br&gt;+ getRegisDate(id: String): LocalDate&lt;br&gt;+ getDate(): LocalDate&lt;br&gt;+getTotalAmount(name: String, surname: String, amount: int,&lt;br&gt;isPhone: boolean): int&lt;br&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;fontSize=12;fillColor=default;strokeColor=#F0F0F0;perimeterSpacing=0;strokeWidth=2;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="40" width="250" height="290" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="endArrow=classic;html=1;fontFamily=Helvetica;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="21" target="23">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="440" as="sourcePoint"/>
+                        <mxPoint x="440" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;fontFamily=Helvetica;fontSize=12;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="19" target="24">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="120" as="sourcePoint"/>
+                        <mxPoint x="440" y="120" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
