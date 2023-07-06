@@ -22,7 +22,7 @@ function App() {
     setSelectedProductsList((prevSelectedProducts) => [...prevSelectedProducts, item]);
   };
   const [data, setData] = useState([]);
-  const [totalFee,setTotalFee]=useState([]);
+  const [totalFee, setTotalFee] = useState([]);
 
   const [customers, setCustomers] = useState([]);
   const [selectedProductsList, setSelectedProductsList] = useState([]);
@@ -45,24 +45,19 @@ function App() {
   const [name, setName] = useState(""); // Name değerinin state'i
   const [surname, setSurname] = useState(""); // Surname değerinin state'i
   const [isPhone, setIsPhone] = useState(); // isPhone değerinin state'i
-
+  const [decisionValue, setDecisionValue]= useState(0);
   const handleGetAmount = () => {
     const totalAmount = selectedProductsList.reduce((acc, product) => acc + product.price, 0);
     setAmount(totalAmount);
     console.log("Toplam tutar: " + totalAmount);
     console.log(selectedProductsList);
-    //productName in ne olduğunu bilmiyor tekrar göz geçir bakayım şu merete
-
-      console.log(isPhone);selectedProductsList.forEach((product) => {
-        const test=product.productName;
-        console.log("gelen veri: "+test);
-        console.log("isPhone 1: "+isPhone);
-        if(product.productName=="Telephone") setIsPhone(true);
-        console.log("isPhone 2:"+isPhone);
-      });
-     
+    selectedProductsList.forEach((product) => {
+      if (product.productName === "Telephone") setDecisionValue(1);
+    });
+    if (decisionValue===1) setIsPhone(true);
+    else setIsPhone(false);
+    console.log(isPhone);
     // Burada Axios API çağrısını gerçekleştirin ve 'totalAmount' değerini kullanarak işlem yapın
-    // Örnek olarak:
     axios.get(`http://localhost:8080/GetAmount/${name}/${surname}/${totalAmount}/${isPhone}`)
       .then(response => {
         // İşlem başarılı olduysa gelen verileri kullanabilirsiniz
@@ -74,8 +69,8 @@ function App() {
         console.log(error);
       });
     //  setTotalFee(bill.data);
-     // console.log(totalFee);
-      
+    // console.log(totalFee);
+
   };
   return (
     <div className="App">
@@ -103,7 +98,7 @@ function App() {
               </Dropdown.Item>
             ))}
           </DropdownButton>
-  
+
           <br />
           <h4>Selected Products:</h4>
           {selectedProductsList.map((product, index) => (
@@ -112,7 +107,7 @@ function App() {
             </div>
           ))}
 
-          
+
           <br></br>
           <input type="button" value="Get Amount" onClick={handleGetAmount} />
         </form>
