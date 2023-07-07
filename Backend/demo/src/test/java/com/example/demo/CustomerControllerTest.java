@@ -13,8 +13,8 @@ public class CustomerControllerTest {
     @Test
     public void testGetTotalAmount() {
         // Database kullanmadığım için test verilerini statik arrayListin içerisinde bulunan yapıdan çektim. 
-        String name = "Ayşe";
-        String surname = "Boztoprak";
+        String name = "NAZİYE";
+        String surname = "GÜLER";
         int amount = 1000;
         boolean isPhone = true;
         int expectedDiscountedAmount = 735; // Beklenen indirimli tutar

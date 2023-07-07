@@ -41,22 +41,28 @@ function App() {
       console.error(error);
     }
   };
-
+// Hata! API call yapılmadan önce, yani handleGetAmount çalışmaya başladığında productName verisini okuyup isPhone verisini
+// doğru bir şekilde ayarlayamıyorum. Bu da ilk butona basıldığı anda herhangi bir response dönmemesine sebep oluyor
   const [name, setName] = useState(""); // Name değerinin state'i
   const [surname, setSurname] = useState(""); // Surname değerinin state'i
+  const [decisionValue, setDecisionValue]= useState(); //isPhone'a hangi veriyi sağlayacağımda yardımcı oluyor
   const [isPhone, setIsPhone] = useState(); // isPhone değerinin state'i
-  const [decisionValue, setDecisionValue]= useState(0);
+
+
+
   const handleGetAmount = () => {
+    
     const totalAmount = selectedProductsList.reduce((acc, product) => acc + product.price, 0);
     setAmount(totalAmount);
     console.log("Toplam tutar: " + totalAmount);
     console.log(selectedProductsList);
+    console.log("isPhone "+isPhone);
     selectedProductsList.forEach((product) => {
-      if (product.productName === "Telephone") setDecisionValue(1);
+      if (product.productName === "Telephone") setDecisionValue(true);
     });
-    if (decisionValue===1) setIsPhone(true);
+    if (decisionValue===true) setIsPhone(true);
     else setIsPhone(false);
-    console.log(isPhone);
+    console.log("after isPhone "+isPhone);
     // Burada Axios API çağrısını gerçekleştirin ve 'totalAmount' değerini kullanarak işlem yapın
     axios.get(`http://localhost:8080/GetAmount/${name}/${surname}/${totalAmount}/${isPhone}`)
       .then(response => {

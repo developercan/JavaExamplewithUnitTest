@@ -20,11 +20,11 @@ public class CustomerController {
     public CustomerController() {
         Customers = new ArrayList<>();
         Customers.add(new Customer("0", "Ahmet", "Kocaman", "Gold", LocalDate.of(2023, 06, 30)));
-        Customers.add(new Customer("1", "Ayşe", "Boztoprak", "Gold", LocalDate.of(2022, 06, 30)));
-        Customers.add(new Customer("2", "Feyza", "Kocaman", "Silver", LocalDate.of(2021, 06, 30)));
-        Customers.add(new Customer("3", "Ali", "Kocaman", "Silver", LocalDate.of(2020, 06, 30)));
-        Customers.add(new Customer("4", "Fatma", "Kocaman", "Partner", LocalDate.of(2019, 06, 30)));
-        Customers.add(new Customer("5", "Can", "Kocaman", "", LocalDate.of(2018, 06, 30)));
+        Customers.add(new Customer("1", "Naziye", "Güler", "Gold", LocalDate.of(2022, 06, 30)));
+        Customers.add(new Customer("2", "Cenk", "Osmanoğlu", "Silver", LocalDate.of(2021, 06, 30)));
+        Customers.add(new Customer("3", "Recaizade", "Hacıoğlu", "Silver", LocalDate.of(2020, 06, 30)));
+        Customers.add(new Customer("4", "Orhan", "Veli", "Partner", LocalDate.of(2019, 06, 30)));
+        Customers.add(new Customer("5", "Namık", "Bilgiç", "", LocalDate.of(2018, 06, 30)));
 
     }
 
