@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 
-import com.example.demo.controller.CustomerController;
+import com.example.demo.controller.CalculateController;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -20,7 +20,7 @@ public class CustomerControllerTest {
         int expectedDiscountedAmount = 735; // Beklenen indirimli tutar
 
         // Mock customerController nesnesi üzerinden getPercentageDiscount çağrısını taklit et
-        CustomerController mockCustomerController = mock(CustomerController.class);
+        CalculateController mockCustomerController = mock(CalculateController.class);
         when(mockCustomerController.getPercentageDiscount(name, surname, amount, isPhone)).thenReturn(expectedDiscountedAmount);
 
         // getTotalAmount'i çağır
